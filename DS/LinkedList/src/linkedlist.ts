@@ -45,6 +45,8 @@ export class SingleLinkedList<T> {
   }
 }
 
+// variation on linked list that appends faster without need
+// to traverse entire structure to find the tail
 export class SingleLinkedListFaster<T> extends SingleLinkedList<T> {
   tail: ListNode<T> | undefined;
 
