@@ -1,14 +1,7 @@
-class ListNode<T> {
-  constructor(
-    public value: T,
-    public next: ListNode<T> | undefined = undefined,
-  ) {
-    this.value = value;
-  }
-}
+import { Node } from "./node";
 
 export class SingleLinkedList<T> {
-  head: ListNode<T> | undefined;
+  head: Node<T> | undefined;
   size: number;
 
   constructor() {
@@ -18,13 +11,13 @@ export class SingleLinkedList<T> {
 
   append(value: T) {
     if (this.head === undefined) {
-      this.head = new ListNode(value);
+      this.head = new Node(value);
     } else {
-      let tail: ListNode<T> | undefined = this.head;
+      let tail: Node<T> | undefined = this.head;
       while (tail?.next !== undefined) {
         tail = tail.next;
       }
-      const next = new ListNode(value);
+      const next = new Node(value);
       if (tail) {
         tail.next = next;
       }
@@ -42,27 +35,5 @@ export class SingleLinkedList<T> {
       fn(tail.value);
       tail = tail.next;
     }
-  }
-}
-
-// variation on linked list that appends faster without need
-// to traverse entire structure to find the tail
-export class SingleLinkedListFaster<T> extends SingleLinkedList<T> {
-  tail: ListNode<T> | undefined;
-
-  constructor() {
-    super();
-    this.tail = undefined;
-  }
-
-  append(value: T) {
-    if (this.tail) {
-      const node = new ListNode<T>(value);
-      this.tail.next = node;
-      this.tail = node;
-    } else {
-      this.head = this.tail = new ListNode(value);
-    }
-    this.size++;
   }
 }

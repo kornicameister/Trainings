@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { SingleLinkedList } from "../src";
+import { SingleLinkedListFaster as SingleLinkedList } from "../src";
 
 describe("LinkedList", () => {
   describe("SingleLinkedList", () => {
