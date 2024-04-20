@@ -1,0 +1,14 @@
+{
+  "name": "linkedlist",
+  "version": "0.0.0",
+  "description": "LinkedList",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "kornicameister@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.5.0"
+  }
+}
