@@ -1,0 +1,23 @@
+{
+  "name": "@kornicameister/trainings",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Trainings on various subjects",
+  "author": "kornicameister@gmail.com",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "DS/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna run clean ; npx nx reset",
+    "lerna": "lerna",
+    "test": "CI=true lerna run test --"
+  },
+  "devDependencies": {
+    "@tsconfig/node21": "^21.0.3",
+    "lerna": "^8.1.2",
+    "typescript": "~5.4.0",
+    "vitest": "^1.5.0"
+  }
+}
